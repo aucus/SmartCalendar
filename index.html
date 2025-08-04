@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCalendar - AI 기반 스마트 캘린더 확장 프로그램</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .tech-stack {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .tech-stack h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tech-item strong {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📅 SmartCalendar</h1>
+            <p>클립보드의 텍스트를 Google Calendar에 자동 등록하는 AI 기반 생산성 도구</p>
+        </div>
+
+        <div class="main-content">
+            <h2 style="text-align: center; color: #667eea; margin-bottom: 30px;">🚀 주요 기능</h2>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📅</div>
+                    <h3>스마트 일정 등록</h3>
+                    <p>클립보드의 텍스트를 Google Calendar에 자동으로 등록합니다. 복사한 텍스트가 자동으로 일정으로 변환됩니다.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI 기반 분석</h3>
+                    <p>Google Gemini API를 활용하여 텍스트를 스마트하게 분석하고 적절한 일정 정보를 추출합니다.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">📝</div>
+                    <h3>자동 요약</h3>
+                    <p>일정 내용을 AI가 자동으로 요약하여 깔끔하게 정리된 형태로 캘린더에 등록합니다.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>원클릭 등록</h3>
+                    <p>확장 프로그램 아이콘을 클릭하면 클립보드의 텍스트가 자동으로 로드되어 즉시 일정 등록이 가능합니다.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>웹 통합</h3>
+                    <p>웹 페이지에서 텍스트를 선택하고 우클릭 메뉴를 통해 바로 일정으로 등록할 수 있습니다.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>간편 설정</h3>
+                    <p>API 키 설정과 기본 옵션을 쉽게 구성할 수 있는 직관적인 설정 페이지를 제공합니다.</p>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <h3>🛠️ 기술 스택</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <strong>Frontend</strong><br>
+                        HTML, CSS, JavaScript
+                    </div>
+                    <div class="tech-item">
+                        <strong>Backend</strong><br>
+                        Chrome Extension API
+                    </div>
+                    <div class="tech-item">
+                        <strong>AI</strong><br>
+                        Google Gemini API
+                    </div>
+                    <div class="tech-item">
+                        <strong>Calendar</strong><br>
+                        Google Calendar API
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3 style="color: #667eea; margin-bottom: 20px;">지금 시작하세요!</h3>
+                <p style="margin-bottom: 30px; color: #666;">
+                    SmartCalendar로 더욱 효율적인 일정 관리를 경험해보세요.
+                </p>
+                <a href="https://github.com/aucus/SmartCalendar" class="cta-button" target="_blank">
+                    GitHub에서 다운로드
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 SmartCalendar. MIT License.</p>
+            <p>개발자: aucus | GitHub: <a href="https://github.com/aucus/SmartCalendar" style="color: white;">https://github.com/aucus/SmartCalendar</a></p>
+            <p style="margin-top: 10px;">
+                <a href="privacy.html" style="color: white; margin-right: 20px;">개인정보처리방침</a>
+                <a href="terms.html" style="color: white;">서비스 약관</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html> 

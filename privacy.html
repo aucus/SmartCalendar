@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - SmartCalendar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .section h3 {
+            color: #555;
+            margin: 20px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .section p, .section ul {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 개인정보처리방침</h1>
+            <p>SmartCalendar Chrome 확장 프로그램</p>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h2>1. 개인정보 수집 및 이용 목적</h2>
+                <p>SmartCalendar는 사용자의 일정 관리를 돕기 위해 다음과 같은 정보를 수집하고 이용합니다:</p>
+                <ul>
+                    <li><strong>클립보드 텍스트</strong>: 사용자가 복사한 텍스트를 일정으로 변환하기 위해 임시로 처리</li>
+                    <li><strong>Google Calendar 데이터</strong>: 일정 등록 및 조회를 위해 Google Calendar API를 통해 접근</li>
+                    <li><strong>설정 정보</strong>: API 키 및 사용자 설정을 로컬에 저장</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. 개인정보 수집 방법</h2>
+                <p>다음과 같은 방법으로 개인정보를 수집합니다:</p>
+                <ul>
+                    <li>사용자가 직접 복사한 클립보드 텍스트</li>
+                    <li>Google OAuth 인증을 통한 Google Calendar 접근 권한</li>
+                    <li>확장 프로그램 설정 페이지를 통한 사용자 설정</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. 개인정보 보호 및 보안</h2>
+                <h3>데이터 저장</h3>
+                <ul>
+                    <li>모든 개인정보는 사용자의 로컬 브라우저에만 저장됩니다</li>
+                    <li>외부 서버로 개인정보를 전송하지 않습니다</li>
+                    <li>API 키는 로컬 저장소에 암호화되어 저장됩니다</li>
+                </ul>
+
+                <h3>데이터 처리</h3>
+                <ul>
+                    <li>클립보드 텍스트는 Google Gemini API를 통해 처리되며, 처리 후 즉시 삭제됩니다</li>
+                    <li>일정 정보는 Google Calendar API를 통해 직접 처리됩니다</li>
+                    <li>중간 서버를 거치지 않고 직접 API 호출을 수행합니다</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. 제3자 서비스</h2>
+                <p>SmartCalendar는 다음 제3자 서비스를 이용합니다:</p>
+                <ul>
+                    <li><strong>Google Gemini API</strong>: 텍스트 분석 및 일정 정보 추출</li>
+                    <li><strong>Google Calendar API</strong>: 일정 등록 및 관리</li>
+                    <li><strong>Google OAuth</strong>: 사용자 인증 및 권한 관리</li>
+                </ul>
+                <p>이러한 서비스들의 개인정보처리방침은 각 서비스 제공업체의 정책을 따릅니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. 개인정보 보유 및 이용기간</h2>
+                <ul>
+                    <li>클립보드 텍스트: 일정 등록 완료 후 즉시 삭제</li>
+                    <li>설정 정보: 확장 프로그램 삭제 시까지 보유</li>
+                    <li>Google Calendar 데이터: Google의 데이터 보관 정책에 따름</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. 사용자의 권리</h2>
+                <p>사용자는 다음과 같은 권리를 가집니다:</p>
+                <ul>
+                    <li>개인정보 수집 및 이용에 대한 동의 철회</li>
+                    <li>저장된 설정 정보 삭제</li>
+                    <li>Google Calendar 접근 권한 해제</li>
+                    <li>확장 프로그램 완전 삭제</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. 개인정보처리방침 변경</h2>
+                <p>이 개인정보처리방침은 법령 및 방침에 따라 변경될 수 있으며, 변경 시 GitHub 저장소를 통해 공지합니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. 문의처</h2>
+                <p>개인정보 처리와 관련된 문의사항이 있으시면 다음 방법으로 연락해주세요:</p>
+                <ul>
+                    <li>GitHub Issues: <a href="https://github.com/aucus/SmartCalendar/issues" target="_blank">https://github.com/aucus/SmartCalendar/issues</a></li>
+                    <li>개발자: aucus</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html" class="back-link">홈페이지로 돌아가기</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 SmartCalendar. MIT License.</p>
+            <p>최종 업데이트: 2025년 1월</p>
+        </div>
+    </div>
+</body>
+</html> 

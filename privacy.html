@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인정보처리방침 - SmartCalendar</title>
+    <title>Privacy Policy - SmartCalendar</title>
     <style>
         * {
             margin: 0;
@@ -23,6 +23,33 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .language-selector select {
+            background: transparent;
+            border: none;
+            font-size: 14px;
+            color: #667eea;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .language-selector select option {
+            background: white;
+            color: #333;
         }
 
         .header {
@@ -106,108 +133,138 @@
             .main-content {
                 padding: 20px;
             }
+
+            .language-selector {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+        </select>
+    </div>
+
     <div class="container">
         <div class="header">
-            <h1>📄 개인정보처리방침</h1>
-            <p>SmartCalendar Chrome 확장 프로그램</p>
+            <h1>📄 Privacy Policy</h1>
+            <p>SmartCalendar Chrome Extension</p>
         </div>
 
         <div class="main-content">
             <div class="section">
-                <h2>1. 개인정보 수집 및 이용 목적</h2>
-                <p>SmartCalendar는 사용자의 일정 관리를 돕기 위해 다음과 같은 정보를 수집하고 이용합니다:</p>
+                <h2>1. Purpose of Personal Information Collection and Use</h2>
+                <p>SmartCalendar collects and uses the following information to help users manage their schedules:</p>
                 <ul>
-                    <li><strong>클립보드 텍스트</strong>: 사용자가 복사한 텍스트를 일정으로 변환하기 위해 임시로 처리</li>
-                    <li><strong>Google Calendar 데이터</strong>: 일정 등록 및 조회를 위해 Google Calendar API를 통해 접근</li>
-                    <li><strong>설정 정보</strong>: API 키 및 사용자 설정을 로컬에 저장</li>
+                    <li><strong>Clipboard Text</strong>: Temporarily processes text copied by users to convert it into calendar events</li>
+                    <li><strong>Google Calendar Data</strong>: Accesses through Google Calendar API for event registration and retrieval</li>
+                    <li><strong>Settings Information</strong>: Stores API keys and user settings locally</li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2>2. 개인정보 수집 방법</h2>
-                <p>다음과 같은 방법으로 개인정보를 수집합니다:</p>
+                <h2>2. Methods of Personal Information Collection</h2>
+                <p>Personal information is collected through the following methods:</p>
                 <ul>
-                    <li>사용자가 직접 복사한 클립보드 텍스트</li>
-                    <li>Google OAuth 인증을 통한 Google Calendar 접근 권한</li>
-                    <li>확장 프로그램 설정 페이지를 통한 사용자 설정</li>
+                    <li>Clipboard text directly copied by users</li>
+                    <li>Google Calendar access permissions through Google OAuth authentication</li>
+                    <li>User settings through the extension settings page</li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2>3. 개인정보 보호 및 보안</h2>
-                <h3>데이터 저장</h3>
+                <h2>3. Personal Information Protection and Security</h2>
+                <h3>Data Storage</h3>
                 <ul>
-                    <li>모든 개인정보는 사용자의 로컬 브라우저에만 저장됩니다</li>
-                    <li>외부 서버로 개인정보를 전송하지 않습니다</li>
-                    <li>API 키는 로컬 저장소에 암호화되어 저장됩니다</li>
+                    <li>All personal information is stored only on the user's local browser</li>
+                    <li>No personal information is transmitted to external servers</li>
+                    <li>API keys are stored encrypted in local storage</li>
                 </ul>
 
-                <h3>데이터 처리</h3>
+                <h3>Data Processing</h3>
                 <ul>
-                    <li>클립보드 텍스트는 Google Gemini API를 통해 처리되며, 처리 후 즉시 삭제됩니다</li>
-                    <li>일정 정보는 Google Calendar API를 통해 직접 처리됩니다</li>
-                    <li>중간 서버를 거치지 않고 직접 API 호출을 수행합니다</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2>4. 제3자 서비스</h2>
-                <p>SmartCalendar는 다음 제3자 서비스를 이용합니다:</p>
-                <ul>
-                    <li><strong>Google Gemini API</strong>: 텍스트 분석 및 일정 정보 추출</li>
-                    <li><strong>Google Calendar API</strong>: 일정 등록 및 관리</li>
-                    <li><strong>Google OAuth</strong>: 사용자 인증 및 권한 관리</li>
-                </ul>
-                <p>이러한 서비스들의 개인정보처리방침은 각 서비스 제공업체의 정책을 따릅니다.</p>
-            </div>
-
-            <div class="section">
-                <h2>5. 개인정보 보유 및 이용기간</h2>
-                <ul>
-                    <li>클립보드 텍스트: 일정 등록 완료 후 즉시 삭제</li>
-                    <li>설정 정보: 확장 프로그램 삭제 시까지 보유</li>
-                    <li>Google Calendar 데이터: Google의 데이터 보관 정책에 따름</li>
+                    <li>Clipboard text is processed through Google Gemini API and deleted immediately after processing</li>
+                    <li>Calendar information is processed directly through Google Calendar API</li>
+                    <li>Direct API calls are performed without going through intermediate servers</li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2>6. 사용자의 권리</h2>
-                <p>사용자는 다음과 같은 권리를 가집니다:</p>
+                <h2>4. Third-Party Services</h2>
+                <p>SmartCalendar uses the following third-party services:</p>
                 <ul>
-                    <li>개인정보 수집 및 이용에 대한 동의 철회</li>
-                    <li>저장된 설정 정보 삭제</li>
-                    <li>Google Calendar 접근 권한 해제</li>
-                    <li>확장 프로그램 완전 삭제</li>
+                    <li><strong>Google Gemini API</strong>: Text analysis and schedule information extraction</li>
+                    <li><strong>Google Calendar API</strong>: Event registration and management</li>
+                    <li><strong>Google OAuth</strong>: User authentication and permission management</li>
+                </ul>
+                <p>The privacy policies of these services follow the policies of each service provider.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Personal Information Retention and Usage Period</h2>
+                <ul>
+                    <li>Clipboard text: Deleted immediately after event registration completion</li>
+                    <li>Settings information: Retained until extension deletion</li>
+                    <li>Google Calendar data: Follows Google's data retention policy</li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2>7. 개인정보처리방침 변경</h2>
-                <p>이 개인정보처리방침은 법령 및 방침에 따라 변경될 수 있으며, 변경 시 GitHub 저장소를 통해 공지합니다.</p>
+                <h2>6. User Rights</h2>
+                <p>Users have the following rights:</p>
+                <ul>
+                    <li>Withdraw consent for personal information collection and use</li>
+                    <li>Delete stored settings information</li>
+                    <li>Revoke Google Calendar access permissions</li>
+                    <li>Completely delete the extension</li>
+                </ul>
             </div>
 
             <div class="section">
-                <h2>8. 문의처</h2>
-                <p>개인정보 처리와 관련된 문의사항이 있으시면 다음 방법으로 연락해주세요:</p>
+                <h2>7. Changes to Privacy Policy</h2>
+                <p>This privacy policy may be changed according to laws and policies, and will be notified through the GitHub repository when changes occur.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Contact Information</h2>
+                <p>If you have any questions regarding personal information processing, please contact us through the following methods:</p>
                 <ul>
                     <li>GitHub Issues: <a href="https://github.com/aucus/SmartCalendar/issues" target="_blank">https://github.com/aucus/SmartCalendar/issues</a></li>
-                    <li>개발자: aucus</li>
+                    <li>Developer: aucus</li>
                 </ul>
             </div>
 
             <div style="text-align: center; margin-top: 40px;">
-                <a href="index.html" class="back-link">홈페이지로 돌아가기</a>
+                <a href="index.html" class="back-link">Back to Homepage</a>
             </div>
         </div>
 
         <div class="footer">
             <p>&copy; 2025 SmartCalendar. MIT License.</p>
-            <p>최종 업데이트: 2025년 1월</p>
+            <p>Last Updated: January 2025</p>
         </div>
     </div>
+
+    <script>
+        function changeLanguage() {
+            const language = document.getElementById('languageSelect').value;
+            if (language === 'ko') {
+                window.location.href = 'privacy-ko.html';
+            } else {
+                window.location.href = 'privacy.html';
+            }
+        }
+
+        // Set language selector to current page
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLang = window.location.pathname.includes('-ko') ? 'ko' : 'en';
+            document.getElementById('languageSelect').value = currentLang;
+        });
+    </script>
 </body>
 </html> 

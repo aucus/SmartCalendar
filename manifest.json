@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "SmartCalendar",
+  "version": "1.0.0",
+  "description": "클립보드의 텍스트를 Google Calendar에 자동 등록하는 AI 기반 생산성 도구",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "identity",
+    "clipboardRead"
+  ],
+  "host_permissions": [
+    "https://www.googleapis.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "459605052348-895rov4828rv37j0g8cd2d63l1lo4ou0.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar"
+    ]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; style-src 'self' 'unsafe-inline'"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SmartCalendar"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["llm-utils.js", "calendar-utils.js", "content-script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+} 
